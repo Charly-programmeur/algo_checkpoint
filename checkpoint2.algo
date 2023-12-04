@@ -1,0 +1,32 @@
+ALGORITHM DotProduct
+    INPUT: v1, v2 (ARRAY OF FLOAT)
+    OUTPUT: ps (FLOAT)
+
+    ps := 0
+
+    FOR i FROM 1 TO v1.lenght
+        ps := ps + (v1[i] * v2[i])
+    END FOR
+
+    RETURN ps
+    
+END ALGORITHM
+
+ALGORITHM AreVectorsOrthogonal
+    INPUT: v1, v2 (ARRAY OF FLOAT)
+    OUTPUT: is_orthogonal (BOOLEAN)
+
+    dot_result := DotProduct(v1, v2)
+    is_orthogonal := (dot_result = 0)
+
+    RETURN is_orthogonal
+END ALGORITHM
+
+FOR EACH pair IN vectors_list
+    v1 := pair[0]
+    v2 := pair[1]
+    
+    is_orthogonal := AreVectorsOrthogonal(v1, v2)
+    
+    Write ("Vectors", v1, "and", v2, "are orthogonal:", is_orthogonal)
+END FOR

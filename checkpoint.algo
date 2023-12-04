@@ -1,0 +1,22 @@
+ALGORITHM Somme_des_elements_distincts;
+
+    INPUT: set1, set2 (ARRAY OF INTEGER)
+    OUTPUT: resultat_somme (INTEGER)
+
+    element:= INTEGER
+
+    element_distinct := EMPTY SET
+
+    FOR element IN set1
+        ADD element TO element_distinct
+    END FOR
+
+    FOR element IN set2
+        ADD element TO element_distinct
+    END FOR
+
+    resultat_somme := SUM OF element_distinct
+
+    RETURN resultat_somme
+
+END ALGORITHM
